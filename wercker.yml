@@ -1,7 +1,5 @@
 box: python:2.7-slim
 
-services:
-   - elasticsearch
 
 
 
