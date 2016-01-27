@@ -1,20 +1,20 @@
 box: python:2.7-slim
 dev:
   steps:
-    # - pip-install
-    # - internal/watch:
-        code: python manage.py test
-        # reload: true
+    - pip-install
+    - internal/watch:
+        code: python manage.py runserver
+        reload: true
 # Build definition
-# build:
-#   # The steps that will be executed on build
-#   steps:
-#     # A step that executes `pip install` command
-#     - pip-install
+build:
+  # The steps that will be executed on build
+  steps:
+    # A step that executes `pip install` command
+    - pip-install
 
-#     # A custom script step, name value is used in the UI
-#     # and the code value contains the command that get executed
-#     - script:
-#         name: python unit test
-#         code: |
-#           python manage.py test
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: python unit test
+        code: |
+          python manage.py test
