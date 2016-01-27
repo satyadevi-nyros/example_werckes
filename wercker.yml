@@ -1,4 +1,10 @@
 box: python:2.7-slim
+
+services:
+   - elasticsearch
+
+
+
 dev:
   steps:
     - pip-install
@@ -18,3 +24,5 @@ build:
         name: python unit test
         code: |
           python manage.py test
+          fmt.Println(“IP:", os.Getenv("ELASTICSEARCH_PORT_9300_TCP_ADDR”))
+          fmt.Println(“PORT:", os.Getenv("ELASTICSEARCH_PORT_9300_TCP_PORT”))
