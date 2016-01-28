@@ -1,9 +1,6 @@
 box: python:2.7-slim
 
 
-
-box: python
-
 build:
   steps:
     - virtualenv
