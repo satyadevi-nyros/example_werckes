@@ -1,14 +1,14 @@
-# box: python:2.7-slim
+box: python:2.7-slim
 
 
 
 
-# dev:
-#   steps:
-#     - pip-install
-#     - internal/watch:
-#         code: python manage.py runserver
-#         reload: true
+dev:
+  steps:
+    - pip-install
+    - internal/watch:
+        code: python manage.py runserver
+        reload: true
 # # Build definition
 # build:
 #   # The steps that will be executed on build
@@ -28,7 +28,7 @@
 
 
 
-box: wercker/python
+# box: wercker/python
 build:
   steps:
     - virtualenv:
