@@ -32,7 +32,7 @@ box: python:2.7-slim
 build:
   steps:
     - virtualenv:
-        name: Setup virtual environment
+        name: env
     - pip-install:
         name: Install requirements
         auto_run_wheel: True
