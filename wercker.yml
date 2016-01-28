@@ -10,16 +10,6 @@ build:
   steps:
     - pip-install
 
-# build:
-#   steps:
-#     install-packages:
-#     packages: openssh-client
-#   script:
-#       name: python unit test
-#       code: |
-#         python manage.py test
-
-
 build:
   # The steps that will be executed on build
   steps:
@@ -39,7 +29,7 @@ build:
 
 
 
-        
+
 # python --version
 # pip install -r requirements.txt
 # pip list
