@@ -21,6 +21,9 @@ build:
     - script:
         name: python unit test
         code: |
+          pip list
+          print "welcome"
+          print "*************************************"
           python manage.py test
 
 
