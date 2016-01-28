@@ -29,14 +29,84 @@ box: python:2.7-slim
 
 
 # box: wercker/python
+# build:
+#   steps:
+#     - virtualenv:
+#         name: Setup virtual environment
+#     - pip-install:
+#         name: Install requirements
+#         auto_run_wheel: True
+#     - script:
+#         name: Run unit testing
+#         code: |
+#           python manage.py test
+
+
+
+
+box: python
+
 build:
-  steps:
-    - virtualenv:
-        name: env
-    - pip-install:
-        name: Install requirements
-        auto_run_wheel: True
-    - script:
-        name: Run unit testing
-        code: |
-          python manage.py test
+steps:
+- virtualenv
+
+
+build:
+steps:
+- pip-install
+
+build:
+steps:
+- install-packages:
+packages: openssh-client
+
+
+- script:
+name: python unit test
+code: |
+  python manage.py test
+# python --version
+# pip install -r requirements.txt
+# pip list
+# python manage.py test
+
+
+# box: python
+
+# build:
+# steps:
+# - virtualenv:
+# name: setup virtual environment
+
+# - pip-install:
+# requirements_file: "wrecks/requirements.txt"
+# - script:
+# name: build
+# code: |
+# python wrecks/manage.py test
+
+
+
+# box: python
+
+# build:
+# steps:
+# - pip-install:
+# requirements_file: "requirements.txt"
+
+
+# box: python
+
+# build:
+# steps:
+# - script:
+# name: install requirements
+# code: pip install Django
+
+# box: python
+
+# build:
+# steps:
+# - script:
+# name: runnig test cases
+# code: python manage.py test
