@@ -16,9 +16,7 @@ build:
 build:
   steps:
     - install-packages:
-packages: openssh-client
-
-
+    packages: openssh-client
   - script:
       name: python unit test
       code: |
