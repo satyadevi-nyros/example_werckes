@@ -1,0 +1,78 @@
+box: python:2.7-slim
+
+
+build:
+  steps:
+    - virtualenv
+
+
+build:
+  steps:
+    - pip-install
+
+build:
+  # The steps that will be executed on build
+  steps:
+    # A step that executes `pip install` command
+    - pip-install
+
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: python unit test
+        code: |
+          pip list
+          python manage.py test
+
+
+
+
+
+
+
+
+# python --version
+# pip install -r requirements.txt
+# pip list
+# python manage.py test
+
+
+# box: python
+
+# build:
+# steps:
+# - virtualenv:
+# name: setup virtual environment
+
+# - pip-install:
+# requirements_file: "wrecks/requirements.txt"
+# - script:
+# name: build
+# code: |
+# python wrecks/manage.py test
+
+
+
+# box: python
+
+# build:
+# steps:
+# - pip-install:
+# requirements_file: "requirements.txt"
+
+
+# box: python
+
+# build:
+# steps:
+# - script:
+# name: install requirements
+# code: pip install Django
+
+# box: python
+
+# build:
+# steps:
+# - script:
+# name: runnig test cases
+# code: python manage.py test
